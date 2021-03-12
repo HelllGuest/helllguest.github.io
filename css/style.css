@@ -28,10 +28,12 @@ body, html {
 	}
 div.vcenter {
 	margin: 1vh auto 0;
-	height: 100vh;
+	height: 99vh;
 	width: 100%;
 	text-align: center;
-	transform: translate(-8%, -1%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	}
 div.pixel2-wrapper {
 	display: inline-block;
