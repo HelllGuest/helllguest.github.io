@@ -24,7 +24,6 @@ $(function() {
 	.fbMessenger('message', 'bot', 'You can connect to me by clicking the links below.', { timestamp: now, delay: 3000 })
 	.fbMessenger('message', '', '', { timestamp: now, delay: 0 })
 	.fbMessenger('showQuickReplies', [
-		'<a href="https://www.facebook.com/helllguest">Facebook</a>',
 		'<a href="https://www.github.com/helllguest">Github</a>',
 		'<a href="https://forum.xda-developers.com/member.php?u=4441934">XDA Developers</a>',
 	], { timestamp: now, delay: 1500 })
