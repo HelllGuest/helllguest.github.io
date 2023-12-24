@@ -6,7 +6,7 @@ $(function() {
 			botLogoUrl: 'img/x.webp',
 			loop:false
 		})
-	.fbMessenger('start', { delay: 0 })
+	.fbMessenger('start', { delay: 1000 })
 	.fbMessenger('typingIndicator', { delay: 2000 })
 	.fbMessenger('message', 'bot', 'Hello, my name is <b>Anoop Kumar</b>. <br> aka <b>helllguest</b>. It\'s a pleasure to meet you.', { timestamp: now, delay: 1500 })
 	.fbMessenger('message', 'user', 'Hello, Anoop, what is your profession?', { timestamp: now, delay: 1500 })
