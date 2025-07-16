@@ -324,8 +324,9 @@
 
 	Plugin.prototype._handleResize = function() {
 		var width = this.$element.width() || this.$element.height() * 0.5622;
-		// Update font size
-		var fontSize = Math.floor(width / 750 * 24);
+		// Responsive font size: scale with viewport width, clamp between 16px and 28px
+		var vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+		var fontSize = Math.max(16, Math.min(28, Math.round(vw * 0.02))); // 2vw, min 16px, max 28px
 		this.$element.css('font-size', fontSize + 'px');
 		// Force redraw
 		this.$element.parent().toggleClass('jsm-force-redraw');

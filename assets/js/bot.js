@@ -3,7 +3,8 @@ $(function() {
 	$('.screen-content')
 	.fbMessenger({
 			botName: 'Anoop Kumar',
-			botLogoUrl: 'img/x.webp',
+			botLogoUrl: 'assets/img/x.webp',
+			botBannerUrl: 'assets/img/og.png',
 			loop:false
 		})
 	.fbMessenger('start', { delay: 1000 })

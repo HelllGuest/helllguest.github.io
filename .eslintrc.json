@@ -1,0 +1,17 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:security/recommended"
+  ],
+  "plugins": ["security"],
+  "rules": {
+    "no-eval": "error",
+    "no-implied-eval": "error",
+    "no-script-url": "warn",
+    "security/detect-object-injection": "warn"
+  }
+} 
