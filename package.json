@@ -11,8 +11,8 @@
     "htmlhint": "^1.1.4"
   },
   "scripts": {
-    "lint:js": "eslint js/ src/js/ --ext .js",
-    "lint:css": "stylelint \"css/**/*.css\" \"src/sass/**/*.scss\"",
-    "lint:html": "htmlhint \"*.htm*\""
+    "lint:js": "eslint assets/js/ src/js/ --ext .js",
+    "lint:css": "stylelint \"assets/css/**/*.css\" \"src/sass/**/*.scss\"",
+    "lint:html": "htmlhint \"**/*.htm*\""
   }
 } 
