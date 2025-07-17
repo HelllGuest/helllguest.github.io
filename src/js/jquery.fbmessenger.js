@@ -338,13 +338,13 @@
 			// Adjust generic template items
 			var $templates = that.$element.find('.jsm-generic-template');
 			$templates.css('width', 'calc(' + width + 'px - 6em - 4px)');
-			$templates.each(function(index) {
+			$templates.each(function() {
 				var $titles = $(this).find('.title');
 				$titles.css('height', Math.max.apply(Math, $titles.map(function() { return $(this).outerHeight(); })) + 'px');
 			});
 			// Adjust user icon positions
 			var $leftUserWrappers = that.$element.find('.jsm-user-wrapper.' + that.options.leftUser);
-			$leftUserWrappers.each(function(index) {
+			$leftUserWrappers.each(function() {
 				var top = $(this).height() - 3.5 * fontSize; // 3.5 = image size 3 + 0.5 margin bottom
 				var $icon = $(this).find('.jsm-user-icon');
 				$icon.css('top', top + 'px');
@@ -809,7 +809,7 @@
 				$page.find('.jsm-persistent-menu-entry').removeClass('jsm-selected');
 				level.pop();
 			} else {
-				var $menuItem = $container.find('.jsm-persistent-menu-page:nth-child(' + (currentLevel + 1) + ') .jsm-persistent-menu-entry:eq(' + menuItem + ')').addClass('jsm-selected');
+				$container.find('.jsm-persistent-menu-page:nth-child(' + (currentLevel + 1) + ') .jsm-persistent-menu-entry:eq(' + menuItem + ')').addClass('jsm-selected');
 				if ($.isArray(currentMenu[menuItem].children) && currentLevel < 2) {
 					direction = 1;
 					$page = $container.find('.jsm-persistent-menu-page:nth-child(' + (currentLevel + 2) + ')').empty();
