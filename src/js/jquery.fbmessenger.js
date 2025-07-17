@@ -148,7 +148,12 @@
 		} else if (key === 'likeTextLong') {
 			return this._likeText(false);
 		}
-		var text = TRANSLATIONS[this.options.locale][key];
+		// Validate locale and key to prevent object injection
+		var allowedLocales = Object.keys(TRANSLATIONS);
+		var locale = allowedLocales.includes(this.options.locale) ? this.options.locale : 'en';
+		var allowedKeys = Object.keys(TRANSLATIONS[locale]);
+		var safeKey = allowedKeys.includes(key) ? key : allowedKeys[0];
+		var text = TRANSLATIONS[locale][safeKey];
 		if (text.indexOf('$') > -1) {
 			text = text.replace(/\$LIKES/g, this._likeCount());
 			text = text.replace(/\$FRIENDNAME/g, this.options.likes && this.options.likes.friendName ? this.options.likes.friendName : '');
@@ -795,9 +800,9 @@
 			var level = $container.data('level') || [];
 			var currentLevel = level.length;
 			var currentMenu = this.options.persistentMenu;
-			if (level[0] !== undefined) {
+			if (typeof level[0] === 'number' && currentMenu[level[0]] && Array.isArray(currentMenu[level[0]].children)) {
 				currentMenu = currentMenu[level[0]].children;
-				if (level[1] !== undefined) {
+				if (typeof level[1] === 'number' && currentMenu[level[1]] && Array.isArray(currentMenu[level[1]].children)) {
 					currentMenu = currentMenu[level[1]].children;
 				}
 			}
@@ -808,7 +813,7 @@
 				$page = $container.find('.jsm-persistent-menu-page:nth-child(' + currentLevel + ')');
 				$page.find('.jsm-persistent-menu-entry').removeClass('jsm-selected');
 				level.pop();
-			} else {
+			} else if (typeof menuItem === 'number' && currentMenu[menuItem]) {
 				$container.find('.jsm-persistent-menu-page:nth-child(' + (currentLevel + 1) + ') .jsm-persistent-menu-entry:eq(' + menuItem + ')').addClass('jsm-selected');
 				if ($.isArray(currentMenu[menuItem].children) && currentLevel < 2) {
 					direction = 1;
@@ -875,8 +880,8 @@
 					index = 0;
 				}
 			}
-			var item = that.options.script[index];
-			if (item) {
+			if (typeof index === 'number' && index >= 0 && index < that.options.script.length) {
+				var item = that.options.script[index];
 				setTimeout(function() {
 					var args = item.args.concat([index]);
 					Plugin.prototype[item.method].apply(that, args);
