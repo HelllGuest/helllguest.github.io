@@ -1,3 +1,4 @@
+/* global $ */
 $(function() {
 	var now = new Date();
 	$('.screen-content')

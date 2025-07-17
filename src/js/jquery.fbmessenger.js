@@ -1,4 +1,4 @@
-/* global jQuery, $ */
+/* global jQuery */
 /*!
  * jQuery.fbMessenger
  * Simulates interaction with a Facebook Messenger bot on an iPhone
