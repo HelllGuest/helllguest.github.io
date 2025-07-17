@@ -6,13 +6,15 @@
   "devDependencies": {
     "eslint": "^8.0.0",
     "eslint-plugin-security": "^1.7.1",
+    "htmlhint": "^1.1.4",
     "stylelint": "^16.0.0",
     "stylelint-config-standard": "^36.0.0",
-    "htmlhint": "^1.1.4"
+    "stylelint-config-standard-scss": "^15.0.1",
+    "stylelint-scss": "^6.12.1"
   },
   "scripts": {
     "lint:js": "eslint assets/js/ src/js/ --ext .js",
     "lint:css": "stylelint \"assets/css/**/*.css\" \"src/sass/**/*.scss\"",
     "lint:html": "htmlhint \"**/*.htm*\""
   }
-} 
+}

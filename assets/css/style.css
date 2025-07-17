@@ -3,10 +3,7 @@ body, html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
   	position:fixed;
-  	top:0;
-  	bottom:0;
-  	left:0;
-  	right:0;
+  	inset:0;
 	margin: 0;
 	padding: 0;
 	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -14,43 +11,48 @@ body, html {
 	animation: gradient 15s ease infinite;
 	height: 100vh;
 }
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
 	}
+
 	50% {
 		background-position: 100% 50%;
 	}
+
 	100% {
 		background-position: 0% 50%;
 	}
 	}
+
 div.vcenter {
 	height: 97vh;
 	display: flex;
 	justify-content: center;
 	}
+
 div.pixel2-wrapper {
 	display: inline-block;
 	width: auto;
 	height: 100%;
 	position: relative;
 	}
+
 div.pixel2-wrapper > img {
 	height: 100%;
 	width: auto;
 	display: block;
 	}
+
 div.screen-content {
 	position: absolute;
-	top: 22.90%;
-	bottom: 25%;
-	left: 13.45%;
-	right: 14.50%;
+	inset: 22.90% 14.50% 25% 13.45%;
 	background: #fff;
 	border-radius: 3px;
 	overflow: hidden;
 	}
+
 .jsm-bot-info, .jsm-status-navbar, .jsm-messenger-flash, .jsm-chat-progress-indicator, .jsm-input-message {
 	display:none;
 	}

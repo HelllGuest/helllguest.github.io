@@ -2,18 +2,18 @@ $jsm-blue: #007aff;
 $jsm-light-gray: #959595;
 $jsm-dark-gray: #8b858c;
 $jsm-very-light-gray: #cecece;
-
 $message-bubble-padding: 0.6em 1em;
 
 /**
 	Clearfix mixin
 */
 @mixin clearfix {
-	&:before, &:after {
+	&::before, &::after {
 		content: "";
 		display: table;
 	}
-	&:after {
+
+	&::after {
 		clear: both;
 	}
 }
@@ -24,6 +24,7 @@ $message-bubble-padding: 0.6em 1em;
 .jsm-hide {
 	display: none;
 }
+
 .jsm-invisible {
 	visibility: hidden;
 }
@@ -47,6 +48,7 @@ $message-bubble-padding: 0.6em 1em;
 	height: 100%;
 	max-height: 100%;
 }
+
 .jsm-iphone-content {
 	text-align: left;
 	font-family: 'San Francisco', 'Helvetica Neue', Helvetica, sans-serif;
@@ -68,7 +70,8 @@ $message-bubble-padding: 0.6em 1em;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	//background: rgba(255,255,255,0.5);
+
+	// background: rgba(255,255,255,0.5);
 	z-index: 50;
 	font-family: 'San Francisco', 'Helvetica Neue', Helvetica, sans-serif;
 	font-size: 120%;
@@ -95,7 +98,7 @@ $message-bubble-padding: 0.6em 1em;
 			animation-direction: reverse;
 		}
 
-		&.jsm-annotation-right.jsm-annotation-top:after {
+		&.jsm-annotation-right.jsm-annotation-top::after {
 			content: '';
 			position: absolute;
 			bottom: -19px;
@@ -106,7 +109,8 @@ $message-bubble-padding: 0.6em 1em;
 			display: block;
 			width: 0;
 		}
-		&.jsm-annotation-left.jsm-annotation-top:after {
+
+		&.jsm-annotation-left.jsm-annotation-top::after {
 			content: '';
 			position: absolute;
 			bottom: -19px;
@@ -120,14 +124,17 @@ $message-bubble-padding: 0.6em 1em;
 
 	}
 }
+
 @keyframes pop-in {
 	0% {
 		transform: scale(1);
 		opacity: 0;
 	}
+
     50% {
         transform: scale(1.1);
     }
+
     100% {
     	transform: scale(1);
     	opacity: 1;
@@ -170,13 +177,16 @@ $message-bubble-padding: 0.6em 1em;
 					background: #000;
 				}
 			}
+
 			.jsm-carrier-name {
 				margin-left: 0.1em;
 			}
 		}
+
 		.jsm-clock {
 			font-weight: bold;
 		}
+
 		.jsm-battery {
 			position: absolute;
 			top: 0;
@@ -200,10 +210,12 @@ $message-bubble-padding: 0.6em 1em;
 			font-size: 120%;
 			margin-bottom: 0.2em;
 		}
+
 		.jsm-nav-title-replies-in {
 			color: $jsm-light-gray;
 		}
 	}
+
 	.jsm-nav-left, .jsm-nav-right {
 		position: absolute;
 		top: 50%;
@@ -218,9 +230,11 @@ $message-bubble-padding: 0.6em 1em;
 			margin: -0.2em 0.2em 0 0;
 		}
 	}
+
 	.jsm-nav-left {
 		left: 2.1%;
 	}
+
 	.jsm-nav-right {
 		right: 2.1%;
 	}
@@ -271,7 +285,6 @@ $message-bubble-padding: 0.6em 1em;
 	}
 
 	.jsm-get-started {
-
 		border-top: 1px solid $jsm-very-light-gray;
 		text-align: center;
 
@@ -280,6 +293,7 @@ $message-bubble-padding: 0.6em 1em;
 			font-size: 120%;
 			margin: 0.5em;
 		}
+
 		.jsm-get-started-button {
 			background: $jsm-blue;
 			font-size: 150%;
@@ -307,6 +321,7 @@ $message-bubble-padding: 0.6em 1em;
 			border-radius: 3px;
 			background-color: $jsm-very-light-gray;
 		}
+
 		.jsm-persistent-menu {
 			width: 100%;
 			overflow: hidden;
@@ -323,6 +338,7 @@ $message-bubble-padding: 0.6em 1em;
 						margin: 0 0 0 1em;
 						border-bottom: 1px solid $jsm-very-light-gray;
 					}
+
 					.jsm-persistent-menu-title {
 						margin: 0;
 						border-bottom: 1px solid $jsm-very-light-gray;
@@ -331,7 +347,7 @@ $message-bubble-padding: 0.6em 1em;
 						font-weight: bold;
 						text-align: center;
 
-						&:after {
+						&::after {
 							position: absolute;
 							top: 0.7em;
 							left: 0.5em;
@@ -343,6 +359,7 @@ $message-bubble-padding: 0.6em 1em;
 							width: 1.25em;
 						}
 					}
+
 					.jsm-persistent-menu-entry {
 						.jsm-persistent-menu-text {
 							margin: 0 0 0 1em;
@@ -350,7 +367,7 @@ $message-bubble-padding: 0.6em 1em;
 							color: #030303;
 							position: relative;
 
-							&.jsm-has-children:after {
+							&.jsm-has-children::after {
 								position: absolute;
 								top: 0.7em;
 								right: 0.5em;
@@ -374,7 +391,7 @@ $message-bubble-padding: 0.6em 1em;
 						}
 					}
 
-					&:after {
+					&::after {
 						position: absolute;
 						content: ' ';
 						width: 100%;
@@ -385,9 +402,9 @@ $message-bubble-padding: 0.6em 1em;
 						transition: all 250ms ease-in-out;
 					}
 
-					&.jsm-has-overlay:after {
-						background-color: rgba(0, 0, 0, 0.1);
-						box-shadow: inset -4px 0px 4px 0px rgba(0, 0, 0, 0.125);
+					&.jsm-has-overlay::after {
+						background-color: rgb(0 0 0 / 10%);
+						box-shadow: inset -4px 0 4px 0 rgb(0 0 0 / 12.5%);
 
 					}
 				}
@@ -402,14 +419,15 @@ $message-bubble-padding: 0.6em 1em;
 	width: 100%;
 	height: 100%;
 }
+
 .jsm-chat-content-wrapper-2 {
 	width: 100%;
 	height: 100%;
 	position: relative;
 }
+
 .jsm-chat-content {
 	max-height: 100%;
-	width: 100%;
 	height: 100%;
 	background: #fff;
 	overflow: hidden;
@@ -442,10 +460,7 @@ $message-bubble-padding: 0.6em 1em;
 	*/
 	.jsm-bot-welcome-message {
 		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
+		inset: 0;
 		background: #fff;
 
 		.jsm-bot-welcome-banner {
@@ -474,18 +489,21 @@ $message-bubble-padding: 0.6em 1em;
 				}
 			}
 		}
+
 		h1 {
 			margin: 2em 0 0;
 			text-align: center;
 			font-weight: normal;
 			font-size: 180%;
 		}
+
 		h2 {
 			text-align: center;
 			font-weight: normal;
 			font-size: 130%;
 			margin: 0.15em 0 0.25em;
 		}
+
 		& > p {
 			text-align: center;
 			color: $jsm-light-gray;
@@ -493,6 +511,7 @@ $message-bubble-padding: 0.6em 1em;
 			padding: 0 2em;
 			margin: 0 0 2em;
 		}
+
 		div.jsm-bot-welcome-status {
 			@include clearfix;
 
@@ -510,6 +529,7 @@ $message-bubble-padding: 0.6em 1em;
 					height: 2.25em;
 				}
 			}
+
 			p {
 				margin: 0 0 0 3em;
 				font-size: 130%;
@@ -523,6 +543,7 @@ $message-bubble-padding: 0.6em 1em;
 	*/
 	&.ios {
 		width: 100%;
+
 		.jsm-bot-welcome-message {
 			margin-right: 0;
 		}
@@ -541,7 +562,7 @@ $message-bubble-padding: 0.6em 1em;
 
 		img {
 			float: left;
-			margin: 0 1.5em 1.5em 1.5em;
+			margin: 0 1.5em 1.5em;
 			width: 6em;
 			height: 6em;
 			border-radius: 50%;
@@ -551,11 +572,13 @@ $message-bubble-padding: 0.6em 1em;
 			font-size: 160%;
 			margin: 0.15em 0;
 		}
+
 		.jsm-bot-info-likes, .jsm-bot-info-category {
 			font-size: 120%;
 			margin-bottom: 0.25em;
 			font-weight: 200;
 		}
+
 		.jsm-bot-info-category {
 			color: $jsm-light-gray;
 		}
@@ -579,6 +602,7 @@ $message-bubble-padding: 0.6em 1em;
 				height: 3em;
 				border-radius: 50%;
 			}
+
 			img.jsm-messenger-flash {
 				position: absolute;
 				width: 1.5em;
@@ -629,10 +653,12 @@ $message-bubble-padding: 0.6em 1em;
 			&.jsm-has-previous {
 				border-top-left-radius: 0.25em;
 			}
+
 			&.jsm-has-next {
 				border-bottom-left-radius: 0.25em;
 			}
 		}
+
 		&.jsm-right {
 			float: right;
 			background: $jsm-blue;
@@ -643,6 +669,7 @@ $message-bubble-padding: 0.6em 1em;
 			&.jsm-has-previous {
 				border-top-right-radius: 0.25em;
 			}
+
 			&.jsm-has-next {
 				border-bottom-right-radius: 0.25em;
 			}
@@ -681,9 +708,9 @@ $message-bubble-padding: 0.6em 1em;
 			background-repeat: no-repeat;
 			background-position: 50% 50%;
 			background-size: cover;
-			border: 1px solid rgba(255, 255, 255, 0.25); /** FIXME why are left and right borders cut off? */
+			border: 1px solid rgb(255 255 255 / 25%); /** FIXME why are left and right borders cut off? */
 
-			&:after {
+			&::after {
 				padding-top: 52.35%;
 				display: block;
 				content: '';
@@ -696,18 +723,21 @@ $message-bubble-padding: 0.6em 1em;
 					border-top-left-radius: 0.25em;
 				}
 			}
+
 			&.jsm-has-next {
 				.jsm-image {
 					border-bottom-left-radius: 0.25em;
 				}
 			}
 		}
+
 		&.jsm-right {
 			&.jsm-has-previous {
 				.jsm-image {
 					border-top-right-radius: 0.25em;
 				}
 			}
+
 			&.jsm-has-next {
 				.jsm-image {
 					border-bottom-right-radius: 0.25em;
@@ -725,11 +755,13 @@ $message-bubble-padding: 0.6em 1em;
 				height: 1.5em;
 			}
 		}
+
 		&.jsm-left {
 			.jsm-share {
 				right: -2.15em;
 			}
 		}
+
 		&.jsm-right {
 			.jsm-share {
 				left: -2.15em;
@@ -748,19 +780,22 @@ $message-bubble-padding: 0.6em 1em;
 			border-radius: 50%;
 			display: inline-block;
 			margin-right: 0.25em;
-			-webkit-animation: jsm-typing-indicator-anim 2s infinite;
+			animation: jsm-typing-indicator-anim 2s infinite;
 			animation: jsm-typing-indicator-anim 2s infinite;
 		}
+
 		span:nth-child(1) {
-			-webkit-animation-delay: 0s;
+			animation-delay: 0s;
 			animation-delay: 0s;
 		}
+
 		span:nth-child(2) {
-			-webkit-animation-delay: 0.15s;
+			animation-delay: 0.15s;
 			animation-delay: 0.15s;
 		}
+
 		span:nth-child(3) {
-			-webkit-animation-delay: 0.3s;
+			animation-delay: 0.3s;
 			animation-delay: 0.3s;
 			margin-right: 0;
 		}
@@ -773,9 +808,11 @@ $message-bubble-padding: 0.6em 1em;
 		margin-bottom: 0.5em;
 		padding: 0;
 		width: calc(100% - 6em);
+
 		.jsm-header {
 			padding: $message-bubble-padding;
 		}
+
 		.jsm-button:last-child {
 			border-bottom-left-radius: 1.45em;
 			border-bottom-right-radius: 1.45em;
@@ -839,6 +876,7 @@ $message-bubble-padding: 0.6em 1em;
 						font-weight: bold;
 						margin: 0 0 0.5em;
 					}
+
 					p:last-child {
 						color: $jsm-dark-gray;
 						font-size: 90%;
@@ -866,6 +904,7 @@ $message-bubble-padding: 0.6em 1em;
 						border-bottom: none;
 					}
 				}
+
 				&:last-child {
 					border-top-right-radius: 1.5em;
 					border-bottom-right-radius: 1.5em;
@@ -893,13 +932,16 @@ $message-bubble-padding: 0.6em 1em;
 			text-align: center;
 			overflow: hidden;
 			border-bottom: 1px solid #f1f0f0;
+
 			&.jsm-selected {
 				color: $jsm-light-gray;
 			}
 		}
+
 		&.jsm-has-previous .jsm-button:last-child {
 			border-top-left-radius: 0.25em;
 		}
+
 		&.jsm-has-next .jsm-button:last-child {
 			border-bottom-left-radius: 0.25em;
 		}
@@ -910,21 +952,26 @@ $message-bubble-padding: 0.6em 1em;
     0% {
     	transform: translate(0, 0);
     }
+
     20% {
     	transform: translate(0, -0.5em);
     }
+
     40% {
     	transform: translate(0, 0);
     }
 }
-@-webkit-keyframes jsm-typing-indicator-anim {
+
+@keyframes jsm-typing-indicator-anim {
     0% {
-    	-webkit-transform: translate(0, 0);
+    	transform: translate(0, 0);
     }
+
     20% {
-    	-webkit-transform: translate(0, -0.5em);
+    	transform: translate(0, -0.5em);
     }
+
     40% {
-    	-webkit-transform: translate(0, 0);
+    	transform: translate(0, 0);
     }
 }
