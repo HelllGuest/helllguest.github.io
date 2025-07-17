@@ -297,7 +297,7 @@
 	}
 
 	Plugin.prototype._checkUser = function(user) {
-		if (!user in [this.options.leftUser, this.options.rightUser]) {
+		if (!(user === this.options.leftUser || user === this.options.rightUser)) {
 			$.error('Unknown user ' + user);
 		}
 	}
