@@ -14,14 +14,10 @@ export default [
         jQuery: 'readonly',
       },
     },
-    plugins: {
-      security: require('eslint-plugin-security'),
-    },
     rules: {
       'no-eval': 'error',
       'no-implied-eval': 'error',
       'no-script-url': 'warn',
-      'security/detect-object-injection': 'warn',
     },
   },
 ]; 

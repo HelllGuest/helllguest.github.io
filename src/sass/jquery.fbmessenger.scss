@@ -4,6 +4,8 @@ $jsm-dark-gray: #8b858c;
 $jsm-very-light-gray: #cecece;
 $message-bubble-padding: 0.6em 1em;
 
+
+
 /**
 	Clearfix mixin
 */
@@ -560,13 +562,7 @@ $message-bubble-padding: 0.6em 1em;
 		clear: both;
 		margin-bottom: 1em;
 
-		img {
-			float: left;
-			margin: 0 1.5em 1.5em;
-			width: 6em;
-			height: 6em;
-			border-radius: 50%;
-		}
+
 
 		.jsm-bot-info-name {
 			font-size: 160%;
@@ -581,6 +577,14 @@ $message-bubble-padding: 0.6em 1em;
 
 		.jsm-bot-info-category {
 			color: $jsm-light-gray;
+		}
+
+		img {
+			float: left;
+			margin: 0 1.5em 1.5em;
+			width: 6em;
+			height: 6em;
+			border-radius: 50%;
 		}
 	}
 
@@ -717,6 +721,17 @@ $message-bubble-padding: 0.6em 1em;
 			}
 		}
 
+		.jsm-share {
+			position: absolute;
+			top: 50%;
+			margin-top: -0.75em;
+
+			svg {
+				width: 1.5em;
+				height: 1.5em;
+			}
+		}
+
 		&.jsm-left {
 			&.jsm-has-previous {
 				.jsm-image {
@@ -728,6 +743,10 @@ $message-bubble-padding: 0.6em 1em;
 				.jsm-image {
 					border-bottom-left-radius: 0.25em;
 				}
+			}
+
+			.jsm-share {
+				right: -2.15em;
 			}
 		}
 
@@ -743,26 +762,7 @@ $message-bubble-padding: 0.6em 1em;
 					border-bottom-right-radius: 0.25em;
 				}
 			}
-		}
 
-		.jsm-share {
-			position: absolute;
-			top: 50%;
-			margin-top: -0.75em;
-
-			svg {
-				width: 1.5em;
-				height: 1.5em;
-			}
-		}
-
-		&.jsm-left {
-			.jsm-share {
-				right: -2.15em;
-			}
-		}
-
-		&.jsm-right {
 			.jsm-share {
 				left: -2.15em;
 			}
@@ -942,20 +942,6 @@ $message-bubble-padding: 0.6em 1em;
 			border-bottom-left-radius: 0.25em;
 		}
 	}
-}
-
-@keyframes jsm-typing-indicator-anim {
-    0% {
-    	transform: translate(0, 0);
-    }
-
-    20% {
-    	transform: translate(0, -0.5em);
-    }
-
-    40% {
-    	transform: translate(0, 0);
-    }
 }
 
 @keyframes jsm-typing-indicator-anim {

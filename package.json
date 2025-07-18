@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Portfolio static site for Anoop Kumar (helllguest)",
   "private": true,
+  "type": "module",
   "devDependencies": {
     "eslint": "^9.31.0",
     "eslint-plugin-security": "^3.0.1",
