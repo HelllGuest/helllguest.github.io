@@ -45,6 +45,26 @@ helllguest.github.io/
 - Run all linters before submitting a PR
 - Keep dependencies up to date
 
+## Credits & Dependencies
+
+### Libraries & Frameworks
+- **[jQuery.fbMessenger](https://github.com/digitalbreed/jquery.fbmessenger)** - Facebook Messenger-style chat interface plugin
+- **[jQuery](https://jquery.com/)** v3.7.1 - JavaScript library for DOM manipulation
+- **[ESLint](https://eslint.org/)** v9.31.0 - JavaScript linting utility
+- **[Stylelint](https://stylelint.io/)** v16.0.0 - CSS/SCSS linting utility
+- **[HTMLHint](https://htmlhint.com/)** v1.1.4 - HTML linting utility
+
+### Development Tools
+- **stylelint-config-standard** - Standard Stylelint configuration
+- **stylelint-config-standard-scss** - SCSS-specific Stylelint rules
+- **stylelint-scss** - SCSS support for Stylelint
+- **eslint-plugin-security** - Security-focused ESLint rules
+
+### Assets & Resources
+- **Google Pixel 2 mockup** - Device frame for the portfolio presentation
+- **Gradient background animation** - Custom CSS animation for visual appeal
+- **Social media icons** - Custom SVG and WebP assets for social links
+
 ## License
 
 MIT
